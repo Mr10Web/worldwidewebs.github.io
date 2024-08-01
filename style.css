@@ -1,0 +1,395 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+/* Default theme (Light Theme) */
+body {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    transition: background-color 0.3s, color 0.3s;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+img {
+    width: 200px;
+    margin: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    filter: none !important;
+    background-color: transparent; /* Ensure background is transparent */
+}
+/* Dark Theme */
+body.dark-theme {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+header.dark-theme {
+    background-color: #333;
+    border-bottom: 1px solid #444;
+}
+body.dark-theme img {
+    box-shadow: -10px 10px 10px rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+}
+body.dark-theme .search-container {
+    background-color: #eeeeee; /* Darker background for dark theme */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Remove shadow for dark theme */
+}
+/*.theme-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: none;
+    outline: none;
+    transition: all 0.3s ease;
+}*/
+button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+button.sun {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellow;
+    position: relative;
+}
+/*button.sun::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellow;
+}*/
+/*button.sun::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px yellow;
+}*/
+body.dark-theme button {
+    background-color: darkblue;
+}
+/*body.dark-theme button::before,
+body.dark-theme button::after {
+    background-color: darkblue;
+    box-shadow: 0 0 10px darkblue;
+}*/
+body.dark-theme button.moon {
+    width: 40px;
+    height: 40px;
+    background-color: darkblue;
+    border-radius: 50%;
+    box-shadow: 0 0 10px darkblue;
+    position: relative;
+}
+/*body.dark-theme button.moon::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+}*/
+button.moon::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+}
+/* Position the button */
+#theme-toggle {
+    position: relative; /* Makes the button fixed relative to the viewport */
+    top: -140px;      /* Distance from the top of the viewport */
+    left: 1px;    /* Distance from the right of the viewport */
+    z-index: 1000;  /* Ensures the button is above other content */
+}
+
+.hidden {
+    display: none;
+}
+.info-icon{
+    text-align: center;
+    position: relative;
+    top: -200px;
+    right: 0px;
+}
+.directions {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+h2 {
+    font-family: "Iceland", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.directions-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+.directions h2 {
+    margin-top: 0;
+}
+.directions-steps {
+    text-align: left;
+    margin: 20px 0;
+}
+.directions-steps .step {
+    margin-bottom: 20px;
+}
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+h6 {
+    width: 15px;
+    height: 13px;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    cursor: pointer;
+    background-color: #ffcc00;
+    border-radius: 30%;
+}
+
+h1 {
+    font-size: 143%;
+    position: relative;
+    top: 35px;
+    right: -30px;
+    font-family: "Zen Dots", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+.image-in-h1 {
+    box-shadow: none !important;
+    position: relative;
+    top: -5px;
+    right: 17px;
+    width: 40px;       /* Set image width */
+    height: auto;      /* Maintain aspect ratio */
+    vertical-align: middle; /* Align image vertically in the middle of text */
+    border-radius: 50%;  
+}
+
+h5 {
+    font-size: x-small;
+    text-align: center;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #d3d3d3;
+    border-radius: 10px;
+    padding: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 10px;
+    height: 40px;
+    width: 40px; /* Initial width for the icon only */
+    transition: width 1s ease;
+}
+#searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 10x;
+    padding: 0px;
+    width: 0; /* Initial width to hide the input */
+    transition: width 10s ease;
+    margin-left: -40px;
+    opacity: 0; /* Initially hidden */
+}
+#searchButton {
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#searchButton img {
+    box-shadow: none;
+    position: relative;
+    left: -50%;
+    width: 24px;
+    height: 24px;
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+#searchInput::placeholder {
+    position: relative;
+}
+#searchInput:focus::before {
+    content: "_";
+    color: black;
+    animation: blink 1s step-end infinite;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateX(-50%);
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.category {
+    font-family: "Crimson Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Inherits color from parent element, effectively no color */
+    background-color: transparent; /* Ensures no background color */
+}
+a p {
+    text-decoration: none; /* This ensures the link itself has no underline */
+    color: inherit; /* Inherits color from parent element */
+    text-decoration: none; /* Removes underline if any */
+}
+.Images {
+    display: flex;
+    flex-wrap: wrap;
+}
+.icon {
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+}
+.icon img {
+    width: 60px;
+    height: 60px auto;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+.icon p {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.faded{
+    opacity: 0.3; /* Faded effect */
+    transition: opacity 1s ease; /* Transition duration to match the JavaScript timeout */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+.footer-container {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.footer-section {
+    text-align: center;
+}
+.footer-section h3 {
+    border-bottom: 2px solid #555;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.footer-section p {
+    margin: 0;
+    padding: 0;
+}
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+.footer-section a:hover {
+    text-decoration: underline;
+}
+.icon-email {
+    vertical-align: middle;
+    margin-right: 8px;
+    font-size: 24px;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+}
