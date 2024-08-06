@@ -12,6 +12,9 @@
   
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Iceland&family=Zen+Dots&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Iceland&family=Zen+Dots&display=swap"></noscript>
+    
+  <link rel="preload" href="https://fonts.gstatic.com/s/your-font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
     <!-- Inline Critical CSS -->
   <style>
     body {
@@ -24,6 +27,9 @@
       padding: 10px;
     }
     /* Other critical styles */
+    .dynamic-content {
+    min-height: 200px; /* Reserve enough space */
+    }
   </style>
 
     <link href="https://fonts.googleapis.com/css2?family=Iceland&family=Zen+Dots&display=swap" rel="stylesheet">
@@ -328,7 +334,7 @@
                 <div class="icon">
                     <a href="https://www.primevideo.com">
                     <source srcset="Images/Amazon Prime Video.webp" type="image/webp">
-                    <img src="Images/Amazon Prime Video.png" alt="Amazon Prime Video" width="100">
+                    <img src="Images/Amazon Prime Video.png" alt="Amazon Prime Video" width="100" height="100">
                     <p>Amazon Prime Video</p>
                     </a>
                 </div>
