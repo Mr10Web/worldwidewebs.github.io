@@ -172,20 +172,3 @@ window.addEventListener('load', () => {
         directions.classList.add('hidden');
     });
 });
-
-// Before: Unused function
-function unusedFunction() {
-  console.log('This is not used');
-}
-
-// After: Remove unused function
-function longRunningTask() {
-  // Split the task into smaller parts
-  setTimeout(() => {
-    // Part 1 of the task
-  }, 0);
-
-  setTimeout(() => {
-    // Part 2 of the task
-  }, 0);
-}
