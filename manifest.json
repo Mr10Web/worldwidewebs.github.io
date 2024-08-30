@@ -1,0 +1,20 @@
+{
+    "name": "World Wide Webs",
+    "short_name": "WWW",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "icons": [
+      {
+        "src": "favicon Image/favicon www.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "favicon Image/favicon www.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
