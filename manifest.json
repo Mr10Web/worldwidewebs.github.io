@@ -1,6 +1,5 @@
 {
     "name": "World Wide Webs",
-    "short_name": "WWW",
     "start_url": ".",
     "display": "standalone",
     "theme_color": "#000000",
