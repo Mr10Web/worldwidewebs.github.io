@@ -342,6 +342,7 @@ a p {
     border-radius: 20px;
 }
 .icon p {
+    text-align: center;
     margin-top: 5px;
     font-size: 15px;
 }
