@@ -3,16 +3,16 @@ document.getElementById('searchButton').addEventListener('click', function() {
     const searchInput = document.getElementById('searchInput');
 
     if (searchContainer.style.width === '40px' || searchContainer.style.width === '') {
-        searchContainer.style.width = '300px'; // Expand to desired width
+        searchContainer.style.width = '300px';
         searchInput.style.width = '100%';
-        searchInput.style.opacity = '1'; // Show the input field
+        searchInput.style.opacity = '1';
         searchInput.focus();
     } else {
-        searchContainer.style.width = '40px'; // Collapse back to initial width
+        searchContainer.style.width = '40px';
         searchInput.style.width = '0';
-        searchInput.style.opacity = '0'; // Hide the input field
+        searchInput.style.opacity = '0';
 
-        // Focus on the text and image
+        // Focus on text and image
         var searchText = searchInput.value.toLowerCase();
         focusOnTextAndImage(searchText);
     }
@@ -67,16 +67,16 @@ function fadeOutOtherContent() {
         }
     });
 
-    // Restore normal visibility after the fade duration
+    // To restore normal visibility after the fade duration
     setTimeout(function() {
         document.querySelectorAll('.faded').forEach(function(el) {
             el.classList.remove('faded');
         });
-    }, 1500); // Duration should be longer than the transition
+    }, 1500);
 }
 
 function isAncestorOfFocus(element) {
-    // Check if the element is an ancestor of a focused element
+    // To check if the element is an ancestor of a focused element
     return Array.from(element.querySelectorAll('.focus')).length > 0;
 }
 
@@ -88,7 +88,7 @@ function findTextInElement(element, searchText) {
             var regex = new RegExp(searchText, 'gi');
             if (regex.test(text)) {
                 var span = document.createElement('span');
-                span.classList.add('focus'); // Add focus class to matching text
+                span.classList.add('focus');
                 span.innerHTML = text.replace(regex, function(matched) {
                     return '<span class="focus">' + matched + '</span>';
                 });
@@ -123,7 +123,7 @@ function scrollToElement(element) {
 
     // Adjust the scroll position
     setTimeout(function() {
-        window.scrollBy(0, -100); // Adjust this value to better center the element
+        window.scrollBy(0, -100);
     }, 1000); // Delay to match the scroll animation duration
 }
 
@@ -131,15 +131,20 @@ function scrollToElement(element) {
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const bodyElement = document.body;
+    const backgroundVideo = document.getElementById('backgroundVideo');
 
-    // Check for saved user preference, if any, on load of the website
+    // Set default to dark theme
+    bodyElement.classList.add('dark-theme');
+    themeToggleBtn.classList.add('moon');
+    backgroundVideo.style.display = 'block';
+
+    // Check for saved user preference on load
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        bodyElement.classList.add(savedTheme);
-        if (savedTheme === 'dark-theme') {
-            themeToggleBtn.classList.remove('sun');
-            themeToggleBtn.classList.add('moon');
-        }
+    if (savedTheme === 'light-theme') {
+        bodyElement.classList.remove('dark-theme');
+        themeToggleBtn.classList.remove('moon');
+        themeToggleBtn.classList.add('sun');
+        backgroundVideo.style.display = 'none';
     }
 
     themeToggleBtn.addEventListener('click', function() {
@@ -147,11 +152,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (bodyElement.classList.contains('dark-theme')) {
             themeToggleBtn.classList.remove('sun');
             themeToggleBtn.classList.add('moon');
+            backgroundVideo.style.display = 'block';
             localStorage.setItem('theme', 'dark-theme');
         } else {
             themeToggleBtn.classList.remove('moon');
             themeToggleBtn.classList.add('sun');
-            localStorage.removeItem('theme');
+            backgroundVideo.style.display = 'none';
+            localStorage.setItem('theme', 'light-theme');
         }
     });
 });
@@ -172,3 +179,22 @@ window.addEventListener('load', () => {
         directions.classList.add('hidden');
     });
 });
+
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.content');
+    sections.forEach(section => section.style.display = 'none');
+
+    // Show the selected section
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+
+function toggleVideo() {
+    const video = document.getElementById("backgroundVideo");
+    if (video.style.display === "none") {
+        video.style.display = "block";
+    } else {
+        video.style.display = "none";
+    }
+}
