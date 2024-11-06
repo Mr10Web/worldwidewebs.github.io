@@ -4,11 +4,12 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    size: flex;
     background-color: white;
 }
 
-/* Default theme (Light Theme) */
+/*(Light Theme) */
 body {
     background-color: white;
     color: rgb(0, 0, 0);
@@ -28,7 +29,7 @@ img {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s;
     filter: none !important;
-    background-color: transparent; /* Ensure background is transparent */
+    background-color: transparent;
 }
 /* Dark Theme */
 body.dark-theme {
@@ -45,22 +46,9 @@ body.dark-theme img {
 }
 body.dark-theme .search-container {
     background-color: #eeeeee; /* Darker background for dark theme */
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Remove shadow for dark theme */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); /* Removed shadow for dark theme */
 }
-/*.theme-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: none;
-    outline: none;
-    transition: all 0.3s ease;
-}*/
+
 button {
     padding: 0.5rem 1rem;
     cursor: pointer;
@@ -77,38 +65,7 @@ button.sun {
     box-shadow: 0 0 10px yellow;
     position: relative;
 }
-/*button.sun::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: yellow;
-    border-radius: 50%;
-    box-shadow: 0 0 10px yellow;
-}*/
-/*button.sun::after {
-    content: '';
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: yellow;
-    border-radius: 50%;
-    box-shadow: 0 0 10px yellow;
-}*/
-body.dark-theme button {
-    background-color: darkblue;
-}
-/*body.dark-theme button::before,
-body.dark-theme button::after {
-    background-color: darkblue;
-    box-shadow: 0 0 10px darkblue;
-}*/
+
 body.dark-theme button.moon {
     width: 40px;
     height: 40px;
@@ -117,16 +74,6 @@ body.dark-theme button.moon {
     box-shadow: 0 0 10px darkblue;
     position: relative;
 }
-/*body.dark-theme button.moon::before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border-radius: 50%;
-}*/
 button.moon::before {
     content: '';
     position: absolute;
@@ -140,19 +87,52 @@ button.moon::before {
 }
 /* Position the button */
 #theme-toggle {
-    position: relative; /* Makes the button fixed relative to the viewport */
-    top: -140px;      /* Distance from the top of the viewport */
-    left: 1px;    /* Distance from the right of the viewport */
-    z-index: 1000;  /* Ensures the button is above other content */
+    position: relative;
+    top: -140px;
+    left: 1px;
+    z-index: 1000;
 }
 
 .hidden {
     display: none;
 }
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    z-index: -1;
+    display: block;
+}
+.content {
+    position: relative;
+    z-index: 1; /* Content on top */
+    color: white; /* Text color for visibility */
+    text-align: center;
+    padding: 20px;
+}
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    padding: 1px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 2;
+}
+.toggle-button img {
+    width: 40px;
+    height: 40px;
+    box-shadow: none !important;
+    border-radius: 50px;
+}
+
 .info-icon{
     text-align: center;
     position: relative;
-    top: -200px;
+    top: -10px;
     right: 0px;
 }
 .directions {
@@ -228,9 +208,9 @@ h1 {
     position: relative;
     top: -5px;
     right: 17px;
-    width: 40px;       /* Set image width */
-    height: auto;      /* Maintain aspect ratio */
-    vertical-align: middle; /* Align image vertically in the middle of text */
+    width: 40px;
+    height: auto;
+    vertical-align: middle;
     border-radius: 50%;  
 }
 
@@ -252,7 +232,7 @@ h5 {
     position: relative;
     top: 10px;
     height: 40px;
-    width: 40px; /* Initial width for the icon only */
+    width: 40px;
     transition: width 1s ease;
 }
 #searchInput {
@@ -261,10 +241,10 @@ h5 {
     outline: none;
     font-size: 10x;
     padding: 0px;
-    width: 0; /* Initial width to hide the input */
+    width: 0;
     transition: width 10s ease;
     margin-left: -40px;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
 }
 #searchButton {
     border: none;
@@ -317,14 +297,14 @@ h5 {
 }
 
 a {
-    text-decoration: none; /* Removes underline */
-    color: inherit; /* Inherits color from parent element, effectively no color */
-    background-color: transparent; /* Ensures no background color */
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
 }
 a p {
-    text-decoration: none; /* This ensures the link itself has no underline */
-    color: inherit; /* Inherits color from parent element */
-    text-decoration: none; /* Removes underline if any */
+    text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 .Images {
     display: flex;
@@ -348,8 +328,8 @@ a p {
 }
 
 .faded{
-    opacity: 0.3; /* Faded effect */
-    transition: opacity 1s ease; /* Transition duration to match the JavaScript timeout */
+    opacity: 0.3;
+    transition: opacity 1s ease;
 }
 
 footer {
@@ -385,8 +365,13 @@ footer {
 }
 .icon-email {
     vertical-align: middle;
-    margin-right: 8px;
     font-size: 24px;
+    position: relative;
+    left: 0px;
+    bottom: 2px;
+}
+.contact {
+    background-color: red;
 }
 .footer-bottom {
     text-align: center;
@@ -396,7 +381,7 @@ footer {
 }
 
 .privacy-policy {
-    display: none;
+    display: all;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -408,21 +393,20 @@ footer {
     background-color: rgba(0,0,0,0.4);
 }
 .privacy-policy-content {
-    background-color: black;
-    margin: 15% auto;
-    padding: 20px;
+    background-color: white;
+    padding: 29px;
     border: 1px solid #888;
-    width: 80%;
 }
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+
+.about-button {
+    background-color: gold;
+    color: white;
+    padding: 10px 20px;
+    position: absolute;
+    right: 30px;
+    border: none;
     cursor: pointer;
+}
+.about-button:hover {
+    background-color: goldenrod;
 }
