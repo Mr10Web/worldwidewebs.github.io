@@ -115,9 +115,8 @@ button.moon::before {
 }
 .toggle-button {
     position: absolute;
-    top: 10px;
-    right: 0px;
-    padding: 1px 10px;
+    top: -10px;
+    right: -10px;
     font-size: 16px;
     cursor: pointer;
     z-index: 2;
