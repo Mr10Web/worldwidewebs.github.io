@@ -5,10 +5,10 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    width: 100%;
-    overflow-x: hidden;
     size: flex;
     background-color: white;
+    width: 100%;
+    overflow-x: hidden !important;
 }
 
 /*(Light Theme) */
