@@ -164,32 +164,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-window.addEventListener('load', () => {
-    let infoIcon = document.getElementById('info-icon');
-    let directions = document.getElementById('directions');
-    let closeDirections = document.getElementById('close-directions');
-
-    // Show instructions when the info icon is clicked
-    infoIcon.addEventListener('click', () => {
-        directions.classList.remove('hidden');
-    });
-
-    // Close the instructions section
-    closeDirections.addEventListener('click', () => {
-        directions.classList.add('hidden');
-    });
-});
-
-function showSection(sectionId) {
-    // Hide all sections
-    const sections = document.querySelectorAll('.content');
-    sections.forEach(section => section.style.display = 'none');
-
-    // Show the selected section
-    document.getElementById(sectionId).style.display = 'block';
-}
-
-
 function toggleVideo() {
     const video = document.getElementById("backgroundVideo");
     if (video.style.display === "none") {
