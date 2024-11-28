@@ -283,7 +283,7 @@ a p {
 }
 .icon {
     inline-size: 87px;
-    margin: 10px;
+    margin: 0;
     text-align: center;
 }
 .icon img {
